@@ -1,5 +1,5 @@
 nohup: ignoring input
-[34m2022-12-05 03:54:24.264 EST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+[34m2022-12-05 05:54:23.653 EST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
  Version: 2.4.7
  Commit SHA: df9c661
  Go version: go1.18.7
@@ -7,36 +7,51 @@ nohup: ignoring input
  Chaincode:
   Base Docker Label: org.hyperledger.fabric
   Docker Namespace: hyperledger
-[34m2022-12-05 03:54:24.265 EST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 192.168.5.128:8051
-[34m2022-12-05 03:54:24.265 EST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning 192.168.5.128:8051
-[34m2022-12-05 03:54:24.265 EST 0004 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for endorser service is 2500
-[34m2022-12-05 03:54:24.265 EST 0005 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for deliver service is 2500
-[34m2022-12-05 03:54:24.265 EST 0006 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for gateway service is 500
-[34m2022-12-05 03:54:24.265 EST 0007 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with TLS enabled
-[34m2022-12-05 03:54:24.277 EST 0008 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:54:24.277 EST 0009 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:54:24.277 EST 000a INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
-[34m2022-12-05 03:54:24.292 EST 000b INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
-[34m2022-12-05 03:54:24.293 EST 000c INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/kali/hyperledger/fabric-network-learn/org1-peer/peer1/production/ledgersData/chains/chains
-[34m2022-12-05 03:54:24.302 EST 000d INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
-[34m2022-12-05 03:54:24.319 EST 000e INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
-[34m2022-12-05 03:54:24.321 EST 000f INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
-[34m2022-12-05 03:54:24.321 EST 0010 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint 192.168.5.128:8051
-[34m2022-12-05 03:54:24.322 EST 0011 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: , InternalEndpoint: 192.168.5.128:8051, PKI-ID: 9f1aaf44d122f2f48f7065ef4fad1e79e6ac083c2cebda19270c6a74b406fed5, Metadata: 
-[33m2022-12-05 03:54:24.322 EST 0012 WARN[0m [gossip.gossip] [33;1mNew[0m -> External endpoint is empty, peer will not be accessible outside of its organization
-[34m2022-12-05 03:54:24.322 EST 0013 INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
-[34m2022-12-05 03:54:24.322 EST 0014 INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance 192.168.5.128:8051 started
-[34m2022-12-05 03:54:24.323 EST 0015 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: 192.168.5.128
-[34m2022-12-05 03:54:24.323 EST 0016 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: 192.168.5.128:7053
-[34m2022-12-05 03:54:24.324 EST 0017 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
-[34m2022-12-05 03:54:24.324 EST 0018 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
-[34m2022-12-05 03:54:24.324 EST 0019 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
-[34m2022-12-05 03:54:24.324 EST 001a INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
-[34m2022-12-05 03:54:24.324 EST 001b INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
-[34m2022-12-05 03:54:24.324 EST 001c INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
-[34m2022-12-05 03:54:24.324 EST 001d INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
-[34m2022-12-05 03:54:24.324 EST 001e INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
-[34m2022-12-05 03:54:24.324 EST 001f INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer1.org1.example.com], network ID=[dev], address=[192.168.5.128:8051]
-[34m2022-12-05 03:54:24.325 EST 0020 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer1.org1.example.com], network ID=[dev], address=[192.168.5.128:8051]
-[34m2022-12-05 03:54:24.325 EST 0021 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/kali/hyperledger/fabric-network-learn/org1-peer/peer1/production/ledgersData/chains]
-[34m2022-12-05 03:54:24.325 EST 0022 INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
+[34m2022-12-05 05:54:23.653 EST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 192.168.5.128:8051
+[34m2022-12-05 05:54:23.653 EST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning 192.168.5.128:8051
+[34m2022-12-05 05:54:23.654 EST 0004 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for endorser service is 2500
+[34m2022-12-05 05:54:23.654 EST 0005 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for deliver service is 2500
+[34m2022-12-05 05:54:23.654 EST 0006 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for gateway service is 500
+[34m2022-12-05 05:54:23.654 EST 0007 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with TLS enabled
+[34m2022-12-05 05:54:23.663 EST 0008 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:54:23.663 EST 0009 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:54:23.664 EST 000a INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2022-12-05 05:54:23.678 EST 000b INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 05:54:23.683 EST 000c INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/kali/hyperledger/fabric-network-learn/org1-peer/peer1/production/ledgersData/chains/chains
+[34m2022-12-05 05:54:23.760 EST 000d INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 05:54:23.779 EST 000e INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 05:54:23.785 EST 000f INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2022-12-05 05:54:23.785 EST 0010 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint 192.168.5.128:8051
+[34m2022-12-05 05:54:23.786 EST 0011 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: , InternalEndpoint: 192.168.5.128:8051, PKI-ID: 50122832b1e0c82b61d0c20f5fc865c8b04873071bc0ee93e819bbea6c67928b, Metadata: 
+[33m2022-12-05 05:54:23.786 EST 0012 WARN[0m [gossip.gossip] [33;1mNew[0m -> External endpoint is empty, peer will not be accessible outside of its organization
+[34m2022-12-05 05:54:23.786 EST 0013 INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
+[34m2022-12-05 05:54:23.786 EST 0014 INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance 192.168.5.128:8051 started
+[34m2022-12-05 05:54:23.786 EST 0015 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: 192.168.5.128
+[34m2022-12-05 05:54:23.787 EST 0016 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: 192.168.5.128:7053
+[34m2022-12-05 05:54:23.787 EST 0017 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2022-12-05 05:54:23.787 EST 0018 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2022-12-05 05:54:23.787 EST 0019 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2022-12-05 05:54:23.787 EST 001a INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2022-12-05 05:54:23.788 EST 001b INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2022-12-05 05:54:23.788 EST 001c INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2022-12-05 05:54:23.788 EST 001d INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2022-12-05 05:54:23.788 EST 001e INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2022-12-05 05:54:23.788 EST 001f INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer1.org1.example.com], network ID=[dev], address=[192.168.5.128:8051]
+[34m2022-12-05 05:54:23.788 EST 0020 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer1.org1.example.com], network ID=[dev], address=[192.168.5.128:8051]
+[34m2022-12-05 05:54:23.788 EST 0021 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/kali/hyperledger/fabric-network-learn/org1-peer/peer1/production/ledgersData/chains]
+[34m2022-12-05 05:54:23.788 EST 0022 INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
+[34m2022-12-05 06:02:33.056 EST 0023 INFO[0m [ledgermgmt] [34;1mCreateLedger[0m -> Creating ledger [businesschannel] with genesis block
+[34m2022-12-05 06:02:33.058 EST 0024 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2022-12-05 06:02:33.064 EST 0025 INFO[0m [kvledger] [34;1mcommit[0m -> [businesschannel] Committed block [0] with 1 transaction(s) in 3ms (state_validation=0ms block_and_pvtdata_commit=2ms state_commit=1ms) commitHash=[]
+[34m2022-12-05 06:02:33.065 EST 0026 INFO[0m [kvledger] [34;1mupdateLedgerStatus[0m -> Updating ledger [businesschannel] status to [ACTIVE]
+[34m2022-12-05 06:02:33.065 EST 0027 INFO[0m [ledgermgmt] [34;1mCreateLedger[0m -> Created ledger [businesschannel] with genesis block
+[33m2022-12-05 06:02:33.067 EST 0028 WARN[0m [peer.orderers] [33;1mUpdate[0m -> Config defines both orderer org specific endpoints and global endpoints, global endpoints will be ignored channel=businesschannel
+[34m2022-12-05 06:02:33.067 EST 0029 INFO[0m [gossip.gossip] [34;1mJoinChan[0m -> Joining gossip network of channel businesschannel with 2 organizations
+[34m2022-12-05 06:02:33.067 EST 002a INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Org1MSP for channel businesschannel to learn about
+[34m2022-12-05 06:02:33.067 EST 002b INFO[0m [gossip.gossip] [34;1mlearnAnchorPeers[0m -> No configured anchor peers of Org2MSP for channel businesschannel to learn about
+[34m2022-12-05 06:02:33.067 EST 002c INFO[0m [gateway] [34;1mconfigUpdate[0m -> Updating orderer config channel=businesschannel
+[34m2022-12-05 06:02:33.068 EST 002d INFO[0m [gossip.state] [34;1mNewGossipStateProvider[0m -> Updating metadata information for channel businesschannel, current ledger sequence is at = 0, next expected block is = 1
+[34m2022-12-05 06:02:33.068 EST 002e INFO[0m [deliveryClient] [34;1mStartDeliverForChannel[0m -> This peer will retrieve blocks from ordering service and disseminate to other peers in the organization channel=businesschannel
+[34m2022-12-05 06:02:33.069 EST 002f INFO[0m [endorser] [34;1mcallChaincode[0m -> finished chaincode: cscc duration: 18ms channel= txID=07935411
+[34m2022-12-05 06:02:33.069 EST 0030 INFO[0m [comm.grpc.server] [34;1m1[0m -> unary call completed grpc.service=protos.Endorser grpc.method=ProcessProposal grpc.peer_address=192.168.5.128:55818 grpc.code=OK grpc.call_duration=19.024902ms
+[34m2022-12-05 06:02:33.070 EST 0031 INFO[0m [peer.blocksprovider] [34;1mDeliverBlocks[0m -> Pulling next blocks from ordering service channel=businesschannel orderer-address=orderer2.example.com:9050 nextBlock=1

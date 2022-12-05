@@ -1,6 +1,6 @@
 nohup: ignoring input
-[34m2022-12-05 03:33:03.444 EST 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> Kafka.Version unset, setting to 0.10.2.0
-[34m2022-12-05 03:33:03.444 EST 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
+[34m2022-12-05 05:53:10.861 EST 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> Kafka.Version unset, setting to 0.10.2.0
+[34m2022-12-05 05:53:10.861 EST 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
 	General.ListenAddress = "192.168.5.128"
 	General.ListenPort = 9050
 	General.TLS.Enabled = true
@@ -100,208 +100,213 @@ nohup: ignoring input
 	Admin.TLS.ClientAuthRequired = true
 	Admin.TLS.ClientRootCAs = []
 	Admin.TLS.TLSHandshakeTimeShift = 0s
-[34m2022-12-05 03:33:03.445 EST 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
-[34m2022-12-05 03:33:03.458 EST 0004 INFO[0m [orderer.common.server] [34;1mMain[0m -> Not bootstrapping the system channel because of existing channels
-[34m2022-12-05 03:33:03.461 EST 0005 INFO[0m [orderer.common.server] [34;1mextractSystemChannel[0m -> Found system channel config block, number: 0
-[34m2022-12-05 03:33:03.463 EST 0006 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting with system channel: fabric-channel, consensus type: etcdraft
-[34m2022-12-05 03:33:03.463 EST 0007 INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
-[34m2022-12-05 03:33:03.463 EST 0008 INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 9050
-[34m2022-12-05 03:33:03.465 EST 0009 INFO[0m [orderer.common.cluster] [34;1mloadVerifier[0m -> Loaded verifier for channel fabric-channel from config block at index 0
-[34m2022-12-05 03:33:03.465 EST 000a INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:33:03.465 EST 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:33:03.465 EST 000c INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:33:03.470 EST 000d INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
-[34m2022-12-05 03:33:03.470 EST 000e INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
-[34m2022-12-05 03:33:03.471 EST 000f INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> Found WAL data at path '/home/kali/hyperledger/fabric-network-learn/orderer2/production/etcdraft/wal/fabric-channel', replaying it channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.471 EST 0010 INFO[0m [orderer.commmon.multichannel] [34;1minitSystemChannel[0m -> Starting system channel 'fabric-channel' with genesis block hash d163682ef139a021bf2fc09ea3da2e3bcb51593ede43ee2215d2c8079bd5b939 and orderer type etcdraft
-[34m2022-12-05 03:33:03.471 EST 0011 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.471 EST 0012 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: fabric-channel, nodes: [ID: 2,
-Endpoint: orderer1.example.com:8050,
-ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
-MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
-cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
-BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
-bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
-BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
-MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
------END CERTIFICATE-----
-, ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
-MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
-cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
-BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
-bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
-BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
-MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
------END CERTIFICATE-----
- ID: 1,
+[34m2022-12-05 05:53:10.863 EST 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
+[34m2022-12-05 05:53:10.868 EST 0004 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/kali/hyperledger/fabric-network-learn/orderer2/production/chains
+[34m2022-12-05 05:53:10.870 EST 0005 INFO[0m [orderer.common.server] [34;1mMain[0m -> Bootstrapping the system channel
+[34m2022-12-05 05:53:10.870 EST 0006 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2022-12-05 05:53:10.873 EST 0007 INFO[0m [orderer.common.server] [34;1minitializeBootstrapChannel[0m -> Initialized the system channel 'fabric-channel' from bootstrap block
+[34m2022-12-05 05:53:10.874 EST 0008 INFO[0m [orderer.common.server] [34;1mextractSystemChannel[0m -> Found system channel config block, number: 0
+[34m2022-12-05 05:53:10.874 EST 0009 INFO[0m [orderer.common.server] [34;1mselectClusterBootBlock[0m -> Cluster boot block is bootstrap (genesis) block; Blocks Header.Number system-channel=0, bootstrap=0
+[34m2022-12-05 05:53:10.875 EST 000a INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting with system channel: fabric-channel, consensus type: etcdraft
+[34m2022-12-05 05:53:10.875 EST 000b INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
+[34m2022-12-05 05:53:10.875 EST 000c INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 9050
+[34m2022-12-05 05:53:10.876 EST 000d INFO[0m [orderer.common.cluster] [34;1mloadVerifier[0m -> Loaded verifier for channel fabric-channel from config block at index 0
+[34m2022-12-05 05:53:10.876 EST 000e INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:53:10.876 EST 000f INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:53:10.876 EST 0010 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:53:10.881 EST 0011 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
+[34m2022-12-05 05:53:10.881 EST 0012 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
+[34m2022-12-05 05:53:10.881 EST 0013 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer2/production/etcdraft/wal/fabric-channel' channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.891 EST 0014 INFO[0m [orderer.commmon.multichannel] [34;1minitSystemChannel[0m -> Starting system channel 'fabric-channel' with genesis block hash dccaff3e2ef65bc9ebd8f0dcf66503367c25a68a94bde0628bd5542b9e63ddf9 and orderer type etcdraft
+[34m2022-12-05 05:53:10.891 EST 0015 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.891 EST 0016 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: fabric-channel, nodes: [ID: 1,
 Endpoint: orderer0.example.com:7050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQQTMns6FPArjoP2b/trhJAjAKBggqhkjOPQQDAjBsMQsw
-CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
-YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
-A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
-Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIwLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEfvbsoUbUqcXUl28Cr0WzD+OzJKE4o3y9Fl5E3aV4DD+i
-B13CJWpIiHCAJi6jmewhcFj3RecZaha7BY00c76LsqOBmDCBlTAOBgNVHQ8BAf8E
-BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjAuZXhhbXBsZS5jb22CCG9yZGVyZXIwMAoGCCqG
-SM49BAMCA0gAMEUCIQCXqzbkjGGeMQi/XMOuj/F3gT9ii8deWKLYofVOb48glQIg
-ZzHkB34A8JoIjPka/+786KHZF2MVYBahMCec55fZzU8=
+MIICXTCCAgOgAwIBAgIRAK+KFEU7wHxflMw2z7qrE5gwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABPg5xsEmlUHDCSVpC44IZruuI0+dU+eTq5k9R1kGwP3g
+54WUZbW9+LBDTYmHX5ckLK102lEVef0ihYRgKOzwRWKjgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIwLmV4YW1wbGUuY29tgghvcmRlcmVyMDAKBggq
+hkjOPQQDAgNIADBFAiEAmxpCA9x4MkAcXr/v9a2IwL8GpyX4TcYu0wPDT7H+CrYC
+IFP/VKU5JGE1rk8zfPc5nQULO6/o4c3ONDxQ4vacbp8m
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQQTMns6FPArjoP2b/trhJAjAKBggqhkjOPQQDAjBsMQsw
-CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
-YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
-A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
-Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIwLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEfvbsoUbUqcXUl28Cr0WzD+OzJKE4o3y9Fl5E3aV4DD+i
-B13CJWpIiHCAJi6jmewhcFj3RecZaha7BY00c76LsqOBmDCBlTAOBgNVHQ8BAf8E
-BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjAuZXhhbXBsZS5jb22CCG9yZGVyZXIwMAoGCCqG
-SM49BAMCA0gAMEUCIQCXqzbkjGGeMQi/XMOuj/F3gT9ii8deWKLYofVOb48glQIg
-ZzHkB34A8JoIjPka/+786KHZF2MVYBahMCec55fZzU8=
------END CERTIFICATE-----
-]
-[34m2022-12-05 03:33:03.471 EST 0013 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel fabric-channel
-[34m2022-12-05 03:33:03.471 EST 0014 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel fabric-channel with endpoint of orderer1.example.com:8050 due to TLS certificate change
-[34m2022-12-05 03:33:03.471 EST 0015 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 1 with endpoint of orderer0.example.com:7050 for channel fabric-channel
-[34m2022-12-05 03:33:03.471 EST 0016 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 1 in channel fabric-channel with endpoint of orderer0.example.com:7050 due to TLS certificate change
-[34m2022-12-05 03:33:03.471 EST 0017 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel fabric-channel , skipping its deactivation
-[34m2022-12-05 03:33:03.471 EST 0018 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 1 exists in both old and new membership for channel fabric-channel , skipping its deactivation
-[34m2022-12-05 03:33:03.471 EST 0019 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
-[34m2022-12-05 03:33:03.471 EST 001a INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Restarting raft node channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.471 EST 001b INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.471 EST 001c INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 3 [peers: [], term: 3, commit: 5, applied: 0, lastindex: 5, lastterm: 3] channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.472 EST 001d INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
- Version: 2.4.7
- Commit SHA: df9c661
- Go version: go1.18.7
- OS/Arch: linux/amd64
-[34m2022-12-05 03:33:03.473 EST 001e INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
-[34m2022-12-05 03:33:03.473 EST 001f INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1] channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.473 EST 0020 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2] channel=fabric-channel node=3
-[34m2022-12-05 03:33:03.473 EST 0021 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=fabric-channel node=3
-[34m2022-12-05 03:33:11.975 EST 0022 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 is starting a new election at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:11.975 EST 0023 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 3 became pre-candidate at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:11.975 EST 0024 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 3 received MsgPreVoteResp from 3 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:11.975 EST 0025 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 3, index: 5] sent MsgPreVote request to 1 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:11.975 EST 0026 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.475 EST 0027 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 is starting a new election at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.475 EST 0028 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 3 became pre-candidate at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.475 EST 0029 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 3 received MsgPreVoteResp from 3 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.475 EST 002a INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 3, index: 5] sent MsgPreVote request to 1 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.475 EST 002b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.477 EST 002c INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [term: 3] received a MsgPreVoteResp message with higher term from 1 [term: 4] channel=fabric-channel node=3
-[34m2022-12-05 03:33:20.477 EST 002d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 4 channel=fabric-channel node=3
-[34m2022-12-05 03:33:21.019 EST 002e INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 3 elected leader 2 at term 4 channel=fabric-channel node=3
-[34m2022-12-05 03:33:21.019 EST 002f INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 2 channel=fabric-channel node=3
-[34m2022-12-05 04:17:56.397 EST 0030 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [1] (Raft index: 7) to ledger channel=fabric-channel node=3
-[34m2022-12-05 04:17:56.402 EST 0031 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
-[34m2022-12-05 04:17:56.414 EST 0032 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
-[34m2022-12-05 04:17:56.415 EST 0033 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
-[34m2022-12-05 04:17:56.415 EST 0034 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer2/production/etcdraft/wal/businesschannel' channel=businesschannel node=3
-[34m2022-12-05 04:17:56.428 EST 0035 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=businesschannel node=3
-[34m2022-12-05 04:17:56.429 EST 0036 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: businesschannel, nodes: [ID: 1,
-Endpoint: orderer0.example.com:7050,
-ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQQTMns6FPArjoP2b/trhJAjAKBggqhkjOPQQDAjBsMQsw
-CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
-YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
-A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
-Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIwLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEfvbsoUbUqcXUl28Cr0WzD+OzJKE4o3y9Fl5E3aV4DD+i
-B13CJWpIiHCAJi6jmewhcFj3RecZaha7BY00c76LsqOBmDCBlTAOBgNVHQ8BAf8E
-BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjAuZXhhbXBsZS5jb22CCG9yZGVyZXIwMAoGCCqG
-SM49BAMCA0gAMEUCIQCXqzbkjGGeMQi/XMOuj/F3gT9ii8deWKLYofVOb48glQIg
-ZzHkB34A8JoIjPka/+786KHZF2MVYBahMCec55fZzU8=
------END CERTIFICATE-----
-, ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQQTMns6FPArjoP2b/trhJAjAKBggqhkjOPQQDAjBsMQsw
-CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
-YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
-A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
-Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIwLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEfvbsoUbUqcXUl28Cr0WzD+OzJKE4o3y9Fl5E3aV4DD+i
-B13CJWpIiHCAJi6jmewhcFj3RecZaha7BY00c76LsqOBmDCBlTAOBgNVHQ8BAf8E
-BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjAuZXhhbXBsZS5jb22CCG9yZGVyZXIwMAoGCCqG
-SM49BAMCA0gAMEUCIQCXqzbkjGGeMQi/XMOuj/F3gT9ii8deWKLYofVOb48glQIg
-ZzHkB34A8JoIjPka/+786KHZF2MVYBahMCec55fZzU8=
+MIICXTCCAgOgAwIBAgIRAK+KFEU7wHxflMw2z7qrE5gwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABPg5xsEmlUHDCSVpC44IZruuI0+dU+eTq5k9R1kGwP3g
+54WUZbW9+LBDTYmHX5ckLK102lEVef0ihYRgKOzwRWKjgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIwLmV4YW1wbGUuY29tgghvcmRlcmVyMDAKBggq
+hkjOPQQDAgNIADBFAiEAmxpCA9x4MkAcXr/v9a2IwL8GpyX4TcYu0wPDT7H+CrYC
+IFP/VKU5JGE1rk8zfPc5nQULO6/o4c3ONDxQ4vacbp8m
 -----END CERTIFICATE-----
  ID: 2,
 Endpoint: orderer1.example.com:8050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
 ]
-[34m2022-12-05 04:17:56.429 EST 0037 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 1 with endpoint of orderer0.example.com:7050 for channel businesschannel
-[34m2022-12-05 04:17:56.429 EST 0038 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 1 in channel businesschannel with endpoint of orderer0.example.com:7050 due to TLS certificate change
-[34m2022-12-05 04:17:56.429 EST 0039 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel businesschannel
-[34m2022-12-05 04:17:56.429 EST 003a INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel businesschannel with endpoint of orderer1.example.com:8050 due to TLS certificate change
-[34m2022-12-05 04:17:56.429 EST 003b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 1 exists in both old and new membership for channel businesschannel , skipping its deactivation
-[34m2022-12-05 04:17:56.429 EST 003c INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel businesschannel , skipping its deactivation
-[34m2022-12-05 04:17:56.429 EST 003d INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
-[34m2022-12-05 04:17:56.429 EST 003e INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=businesschannel node=3
-[34m2022-12-05 04:17:56.429 EST 003f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 0 channel=businesschannel node=3
-[34m2022-12-05 04:17:56.429 EST 0040 INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 3 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=businesschannel node=3
-[34m2022-12-05 04:17:56.429 EST 0041 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 1 channel=businesschannel node=3
-[34m2022-12-05 04:17:56.429 EST 0042 INFO[0m [orderer.commmon.multichannel] [34;1mnewChain[0m -> Created and started new channel businesschannel
-[34m2022-12-05 04:17:56.431 EST 0043 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=businesschannel node=3
-[34m2022-12-05 04:17:56.432 EST 0044 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=businesschannel node=3
-[34m2022-12-05 04:17:56.432 EST 0045 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=businesschannel node=3
-[34m2022-12-05 04:17:57.433 EST 0046 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [logterm: 1, index: 3, vote: 0] cast MsgPreVote for 1 [logterm: 1, index: 3] at term 1 channel=businesschannel node=3
-[34m2022-12-05 04:17:57.437 EST 0047 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [term: 1] received a MsgVote message with higher term from 1 [term: 2] channel=businesschannel node=3
-[34m2022-12-05 04:17:57.437 EST 0048 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 2 channel=businesschannel node=3
-[34m2022-12-05 04:17:57.437 EST 0049 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [logterm: 1, index: 3, vote: 0] cast MsgVote for 1 [logterm: 1, index: 3] at term 2 channel=businesschannel node=3
-[34m2022-12-05 04:17:57.441 EST 004a INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 3 elected leader 1 at term 2 channel=businesschannel node=3
-[34m2022-12-05 04:17:57.441 EST 004b INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=businesschannel node=3
+[34m2022-12-05 05:53:10.891 EST 0017 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 1 with endpoint of orderer0.example.com:7050 for channel fabric-channel
+[34m2022-12-05 05:53:10.892 EST 0018 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 1 in channel fabric-channel with endpoint of orderer0.example.com:7050 due to TLS certificate change
+[34m2022-12-05 05:53:10.892 EST 0019 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel fabric-channel
+[34m2022-12-05 05:53:10.892 EST 001a INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel fabric-channel with endpoint of orderer1.example.com:8050 due to TLS certificate change
+[34m2022-12-05 05:53:10.892 EST 001b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 1 exists in both old and new membership for channel fabric-channel , skipping its deactivation
+[34m2022-12-05 05:53:10.892 EST 001c INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel fabric-channel , skipping its deactivation
+[34m2022-12-05 05:53:10.892 EST 001d INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
+[34m2022-12-05 05:53:10.892 EST 001e INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.892 EST 001f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 0 channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.892 EST 0020 INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 3 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.892 EST 0021 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.892 EST 0022 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
+ Version: 2.4.7
+ Commit SHA: df9c661
+ Go version: go1.18.7
+ OS/Arch: linux/amd64
+[34m2022-12-05 05:53:10.893 EST 0023 INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
+[34m2022-12-05 05:53:10.894 EST 0024 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.894 EST 0025 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=fabric-channel node=3
+[34m2022-12-05 05:53:10.894 EST 0026 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=fabric-channel node=3
+[34m2022-12-05 05:53:18.394 EST 0027 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 is starting a new election at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:18.395 EST 0028 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 3 became pre-candidate at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:18.395 EST 0029 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 3 received MsgPreVoteResp from 3 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:18.395 EST 002a INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 1, index: 3] sent MsgPreVote request to 1 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:18.395 EST 002b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.894 EST 002c INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 is starting a new election at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.894 EST 002d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 3 became pre-candidate at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.894 EST 002e INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 3 received MsgPreVoteResp from 3 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.894 EST 002f INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 1, index: 3] sent MsgPreVote request to 1 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.894 EST 0030 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 3 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.895 EST 0031 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [term: 1] received a MsgPreVoteResp message with higher term from 2 [term: 2] channel=fabric-channel node=3
+[34m2022-12-05 05:53:25.895 EST 0032 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 2 channel=fabric-channel node=3
+[34m2022-12-05 05:53:30.912 EST 0033 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 3 elected leader 1 at term 2 channel=fabric-channel node=3
+[34m2022-12-05 05:53:30.912 EST 0034 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=fabric-channel node=3
+[34m2022-12-05 06:02:14.475 EST 0035 INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [1] (Raft index: 5) to ledger channel=fabric-channel node=3
+[34m2022-12-05 06:02:14.477 EST 0036 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2022-12-05 06:02:14.481 EST 0037 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
+[34m2022-12-05 06:02:14.481 EST 0038 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
+[34m2022-12-05 06:02:14.483 EST 0039 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer2/production/etcdraft/wal/businesschannel' channel=businesschannel node=3
+[34m2022-12-05 06:02:14.493 EST 003a INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=businesschannel node=3
+[34m2022-12-05 06:02:14.493 EST 003b INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: businesschannel, nodes: [ID: 1,
+Endpoint: orderer0.example.com:7050,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICXTCCAgOgAwIBAgIRAK+KFEU7wHxflMw2z7qrE5gwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABPg5xsEmlUHDCSVpC44IZruuI0+dU+eTq5k9R1kGwP3g
+54WUZbW9+LBDTYmHX5ckLK102lEVef0ihYRgKOzwRWKjgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIwLmV4YW1wbGUuY29tgghvcmRlcmVyMDAKBggq
+hkjOPQQDAgNIADBFAiEAmxpCA9x4MkAcXr/v9a2IwL8GpyX4TcYu0wPDT7H+CrYC
+IFP/VKU5JGE1rk8zfPc5nQULO6/o4c3ONDxQ4vacbp8m
+-----END CERTIFICATE-----
+, ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICXTCCAgOgAwIBAgIRAK+KFEU7wHxflMw2z7qrE5gwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMC5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABPg5xsEmlUHDCSVpC44IZruuI0+dU+eTq5k9R1kGwP3g
+54WUZbW9+LBDTYmHX5ckLK102lEVef0ihYRgKOzwRWKjgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIwLmV4YW1wbGUuY29tgghvcmRlcmVyMDAKBggq
+hkjOPQQDAgNIADBFAiEAmxpCA9x4MkAcXr/v9a2IwL8GpyX4TcYu0wPDT7H+CrYC
+IFP/VKU5JGE1rk8zfPc5nQULO6/o4c3ONDxQ4vacbp8m
+-----END CERTIFICATE-----
+ ID: 2,
+Endpoint: orderer1.example.com:8050,
+ServerTLSCert:-----BEGIN CERTIFICATE-----
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
+-----END CERTIFICATE-----
+, ClientTLSCert:-----BEGIN CERTIFICATE-----
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
+BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
+BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
+MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
+-----END CERTIFICATE-----
+]
+[34m2022-12-05 06:02:14.493 EST 003c INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 1 with endpoint of orderer0.example.com:7050 for channel businesschannel
+[34m2022-12-05 06:02:14.493 EST 003d INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 1 in channel businesschannel with endpoint of orderer0.example.com:7050 due to TLS certificate change
+[34m2022-12-05 06:02:14.494 EST 003e INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel businesschannel
+[34m2022-12-05 06:02:14.494 EST 003f INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel businesschannel with endpoint of orderer1.example.com:8050 due to TLS certificate change
+[34m2022-12-05 06:02:14.494 EST 0040 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 1 exists in both old and new membership for channel businesschannel , skipping its deactivation
+[34m2022-12-05 06:02:14.494 EST 0041 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel businesschannel , skipping its deactivation
+[34m2022-12-05 06:02:14.494 EST 0042 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
+[34m2022-12-05 06:02:14.494 EST 0043 INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=businesschannel node=3
+[34m2022-12-05 06:02:14.494 EST 0044 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 0 channel=businesschannel node=3
+[34m2022-12-05 06:02:14.494 EST 0045 INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 3 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=businesschannel node=3
+[34m2022-12-05 06:02:14.494 EST 0046 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 1 channel=businesschannel node=3
+[34m2022-12-05 06:02:14.494 EST 0047 INFO[0m [orderer.commmon.multichannel] [34;1mnewChain[0m -> Created and started new channel businesschannel
+[34m2022-12-05 06:02:14.496 EST 0048 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=businesschannel node=3
+[34m2022-12-05 06:02:14.496 EST 0049 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=businesschannel node=3
+[34m2022-12-05 06:02:14.496 EST 004a INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=businesschannel node=3
+[34m2022-12-05 06:02:15.487 EST 004b INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [logterm: 1, index: 3, vote: 0] cast MsgPreVote for 1 [logterm: 1, index: 3] at term 1 channel=businesschannel node=3
+[34m2022-12-05 06:02:15.489 EST 004c INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [term: 1] received a MsgVote message with higher term from 1 [term: 2] channel=businesschannel node=3
+[34m2022-12-05 06:02:15.489 EST 004d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 3 became follower at term 2 channel=businesschannel node=3
+[34m2022-12-05 06:02:15.489 EST 004e INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 3 [logterm: 1, index: 3, vote: 0] cast MsgVote for 1 [logterm: 1, index: 3] at term 2 channel=businesschannel node=3
+[34m2022-12-05 06:02:15.492 EST 004f INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 3 elected leader 1 at term 2 channel=businesschannel node=3
+[34m2022-12-05 06:02:15.492 EST 0050 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=businesschannel node=3

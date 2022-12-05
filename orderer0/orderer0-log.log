@@ -1,6 +1,6 @@
 nohup: ignoring input
-[34m2022-12-05 03:31:12.501 EST 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> Kafka.Version unset, setting to 0.10.2.0
-[34m2022-12-05 03:31:12.501 EST 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
+[34m2022-12-05 05:52:20.883 EST 0001 INFO[0m [localconfig] [34;1mcompleteInitialization[0m -> Kafka.Version unset, setting to 0.10.2.0
+[34m2022-12-05 05:52:20.884 EST 0002 INFO[0m [orderer.common.server] [34;1mprettyPrintStruct[0m -> Orderer config values:
 	General.ListenAddress = "192.168.5.128"
 	General.ListenPort = 7050
 	General.TLS.Enabled = true
@@ -100,279 +100,471 @@ nohup: ignoring input
 	Admin.TLS.ClientAuthRequired = true
 	Admin.TLS.ClientRootCAs = []
 	Admin.TLS.TLSHandshakeTimeShift = 0s
-[34m2022-12-05 03:31:12.503 EST 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
-[34m2022-12-05 03:31:12.513 EST 0004 INFO[0m [orderer.common.server] [34;1mMain[0m -> Not bootstrapping the system channel because of existing channels
-[34m2022-12-05 03:31:12.516 EST 0005 INFO[0m [orderer.common.server] [34;1mextractSystemChannel[0m -> Found system channel config block, number: 0
-[34m2022-12-05 03:31:12.517 EST 0006 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting with system channel: fabric-channel, consensus type: etcdraft
-[34m2022-12-05 03:31:12.517 EST 0007 INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
-[34m2022-12-05 03:31:12.517 EST 0008 INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 7050
-[34m2022-12-05 03:31:12.518 EST 0009 INFO[0m [orderer.common.cluster] [34;1mloadVerifier[0m -> Loaded verifier for channel fabric-channel from config block at index 0
-[34m2022-12-05 03:31:12.518 EST 000a INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:31:12.519 EST 000b INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:31:12.519 EST 000c INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
-[34m2022-12-05 03:31:12.522 EST 000d INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
-[34m2022-12-05 03:31:12.522 EST 000e INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
-[34m2022-12-05 03:31:12.523 EST 000f INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> Found WAL data at path '/home/kali/hyperledger/fabric-network-learn/orderer0/production/etcdraft/wal/fabric-channel', replaying it channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.526 EST 0010 INFO[0m [orderer.commmon.multichannel] [34;1minitSystemChannel[0m -> Starting system channel 'fabric-channel' with genesis block hash d163682ef139a021bf2fc09ea3da2e3bcb51593ede43ee2215d2c8079bd5b939 and orderer type etcdraft
-[34m2022-12-05 03:31:12.526 EST 0011 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.526 EST 0012 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: fabric-channel, nodes: [ID: 2,
+[34m2022-12-05 05:52:20.886 EST 0003 INFO[0m [orderer.common.server] [34;1minitializeServerConfig[0m -> Starting orderer with TLS enabled
+[34m2022-12-05 05:52:20.891 EST 0004 INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/kali/hyperledger/fabric-network-learn/orderer0/production/chains
+[34m2022-12-05 05:52:20.894 EST 0005 INFO[0m [orderer.common.server] [34;1mMain[0m -> Bootstrapping the system channel
+[34m2022-12-05 05:52:20.895 EST 0006 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2022-12-05 05:52:20.898 EST 0007 INFO[0m [orderer.common.server] [34;1minitializeBootstrapChannel[0m -> Initialized the system channel 'fabric-channel' from bootstrap block
+[34m2022-12-05 05:52:20.899 EST 0008 INFO[0m [orderer.common.server] [34;1mextractSystemChannel[0m -> Found system channel config block, number: 0
+[34m2022-12-05 05:52:20.899 EST 0009 INFO[0m [orderer.common.server] [34;1mselectClusterBootBlock[0m -> Cluster boot block is bootstrap (genesis) block; Blocks Header.Number system-channel=0, bootstrap=0
+[34m2022-12-05 05:52:20.900 EST 000a INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting with system channel: fabric-channel, consensus type: etcdraft
+[34m2022-12-05 05:52:20.900 EST 000b INFO[0m [orderer.common.server] [34;1mMain[0m -> Setting up cluster
+[34m2022-12-05 05:52:20.900 EST 000c INFO[0m [orderer.common.server] [34;1mreuseListener[0m -> Cluster listener is not configured, defaulting to use the general listener on port 7050
+[34m2022-12-05 05:52:20.901 EST 000d INFO[0m [orderer.common.cluster] [34;1mloadVerifier[0m -> Loaded verifier for channel fabric-channel from config block at index 0
+[34m2022-12-05 05:52:20.902 EST 000e INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:52:20.902 EST 000f INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:52:20.902 EST 0010 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The client TLS certificate will expire on 2032-12-02 10:46:00 +0000 UTC
+[34m2022-12-05 05:52:20.905 EST 0011 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
+[34m2022-12-05 05:52:20.905 EST 0012 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
+[34m2022-12-05 05:52:20.906 EST 0013 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer0/production/etcdraft/wal/fabric-channel' channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.908 EST 0014 INFO[0m [orderer.commmon.multichannel] [34;1minitSystemChannel[0m -> Starting system channel 'fabric-channel' with genesis block hash dccaff3e2ef65bc9ebd8f0dcf66503367c25a68a94bde0628bd5542b9e63ddf9 and orderer type etcdraft
+[34m2022-12-05 05:52:20.908 EST 0015 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.908 EST 0016 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: fabric-channel, nodes: [ID: 2,
 Endpoint: orderer1.example.com:8050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
  ID: 3,
 Endpoint: orderer2.example.com:9050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQKFcR6aql1aIu0mZXsZV4hDAKBggqhkjOPQQDAjBsMQsw
+MIICZDCCAgugAwIBAgIQbyHb+DiQl3Zk97H0SLnRdDAKBggqhkjOPQQDAjBsMQsw
 CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
 YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
+YW1wbGUuY29tMB4XDTIyMTIwNTEwNDYwMFoXDTMyMTIwMjEwNDYwMFowWTELMAkG
 A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
 Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEV6XMb/ThypfrFgiVVr/EjB8CeX81z1W0QaJh8CWEPH7S
-v2OOuujGc0jFMVE2GP/NYicX/b7WqbklLU0HZPPqQqOBmDCBlTAOBgNVHQ8BAf8E
+AQYIKoZIzj0DAQcDQgAEqOzin4w4xr4mXk7WLeGVM+2S37xQtVQDLta+CgpvEIpL
+PVGaCIUyMaCldOvdRTvHGS2rqBCDWG2IdpN+yTmWd6OBoTCBnjAOBgNVHQ8BAf8E
 BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyMAoGCCqG
-SM49BAMCA0gAMEUCIQCkvkAqUwfFpLKhmxD3owJsC1Heqz57TsvKKg0EF8jUGwIg
-WmiXUcrhZS4W6S69ac141DgFrDoZCoyCmrItCqYhHek=
+MAAwKwYDVR0jBCQwIoAgXgI2Ygg6at/io/ZD9mYCNlfGrY4CkbqWoVYO7JtyH+4w
+MgYDVR0RBCswKYIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyggEqhwTA
+qAWAMAoGCCqGSM49BAMCA0cAMEQCIGsaPLnN/zCh5Ktzi7ujrzG9h6tBP0fFMZsp
+J9ZDf+HZAiAgl47k7fR9ErmWpD51yB8kJlXW75b9iZsj06nBXz1xbw==
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQKFcR6aql1aIu0mZXsZV4hDAKBggqhkjOPQQDAjBsMQsw
+MIICZDCCAgugAwIBAgIQbyHb+DiQl3Zk97H0SLnRdDAKBggqhkjOPQQDAjBsMQsw
 CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
 YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
+YW1wbGUuY29tMB4XDTIyMTIwNTEwNDYwMFoXDTMyMTIwMjEwNDYwMFowWTELMAkG
 A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
 Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEV6XMb/ThypfrFgiVVr/EjB8CeX81z1W0QaJh8CWEPH7S
-v2OOuujGc0jFMVE2GP/NYicX/b7WqbklLU0HZPPqQqOBmDCBlTAOBgNVHQ8BAf8E
+AQYIKoZIzj0DAQcDQgAEqOzin4w4xr4mXk7WLeGVM+2S37xQtVQDLta+CgpvEIpL
+PVGaCIUyMaCldOvdRTvHGS2rqBCDWG2IdpN+yTmWd6OBoTCBnjAOBgNVHQ8BAf8E
 BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyMAoGCCqG
-SM49BAMCA0gAMEUCIQCkvkAqUwfFpLKhmxD3owJsC1Heqz57TsvKKg0EF8jUGwIg
-WmiXUcrhZS4W6S69ac141DgFrDoZCoyCmrItCqYhHek=
+MAAwKwYDVR0jBCQwIoAgXgI2Ygg6at/io/ZD9mYCNlfGrY4CkbqWoVYO7JtyH+4w
+MgYDVR0RBCswKYIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyggEqhwTA
+qAWAMAoGCCqGSM49BAMCA0cAMEQCIGsaPLnN/zCh5Ktzi7ujrzG9h6tBP0fFMZsp
+J9ZDf+HZAiAgl47k7fR9ErmWpD51yB8kJlXW75b9iZsj06nBXz1xbw==
 -----END CERTIFICATE-----
 ]
-[34m2022-12-05 03:31:12.526 EST 0013 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel fabric-channel
-[34m2022-12-05 03:31:12.526 EST 0014 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel fabric-channel with endpoint of orderer1.example.com:8050 due to TLS certificate change
-[34m2022-12-05 03:31:12.526 EST 0015 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 3 with endpoint of orderer2.example.com:9050 for channel fabric-channel
-[34m2022-12-05 03:31:12.526 EST 0016 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 3 in channel fabric-channel with endpoint of orderer2.example.com:9050 due to TLS certificate change
-[34m2022-12-05 03:31:12.526 EST 0017 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel fabric-channel , skipping its deactivation
-[34m2022-12-05 03:31:12.526 EST 0018 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 3 exists in both old and new membership for channel fabric-channel , skipping its deactivation
-[34m2022-12-05 03:31:12.526 EST 0019 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
-[34m2022-12-05 03:31:12.526 EST 001a INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Restarting raft node channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.526 EST 001b INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.526 EST 001c INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 1 [peers: [], term: 3, commit: 4, applied: 0, lastindex: 5, lastterm: 3] channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.527 EST 001d INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
+[34m2022-12-05 05:52:20.909 EST 0017 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel fabric-channel
+[34m2022-12-05 05:52:20.909 EST 0018 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel fabric-channel with endpoint of orderer1.example.com:8050 due to TLS certificate change
+[34m2022-12-05 05:52:20.909 EST 0019 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 3 with endpoint of orderer2.example.com:9050 for channel fabric-channel
+[34m2022-12-05 05:52:20.909 EST 001a INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 3 in channel fabric-channel with endpoint of orderer2.example.com:9050 due to TLS certificate change
+[34m2022-12-05 05:52:20.910 EST 001b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel fabric-channel , skipping its deactivation
+[34m2022-12-05 05:52:20.910 EST 001c INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 3 exists in both old and new membership for channel fabric-channel , skipping its deactivation
+[34m2022-12-05 05:52:20.910 EST 001d INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
+[34m2022-12-05 05:52:20.910 EST 001e INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.910 EST 001f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 0 channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.910 EST 0020 INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.910 EST 0021 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.911 EST 0022 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> This node is picked to start campaign channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.912 EST 0023 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.912 EST 0024 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.912 EST 0025 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=fabric-channel node=1
+[34m2022-12-05 05:52:20.912 EST 0026 INFO[0m [orderer.common.server] [34;1mMain[0m -> Starting orderer:
  Version: 2.4.7
  Commit SHA: df9c661
  Go version: go1.18.7
  OS/Arch: linux/amd64
-[34m2022-12-05 03:31:12.527 EST 001e INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
-[34m2022-12-05 03:31:12.528 EST 001f INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1] channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.528 EST 0020 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2] channel=fabric-channel node=1
-[34m2022-12-05 03:31:12.528 EST 0021 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=fabric-channel node=1
-[34m2022-12-05 03:31:20.029 EST 0022 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:20.029 EST 0023 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:20.029 EST 0024 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:20.029 EST 0025 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:20.029 EST 0026 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[31m2022-12-05 03:31:20.030 EST 0027 ERRO[0m [orderer.consensus.etcdraft] [31;1mlogSendFailure[0m -> Failed to send StepRequest to 2, because: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.5.128:8050: connect: connection refused" channel=fabric-channel node=1
-[31m2022-12-05 03:31:20.030 EST 0028 ERRO[0m [orderer.consensus.etcdraft] [31;1mlogSendFailure[0m -> Failed to send StepRequest to 3, because: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.5.128:9050: connect: connection refused" channel=fabric-channel node=1
-[34m2022-12-05 03:31:27.532 EST 0029 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:27.532 EST 002a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:27.532 EST 002b INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:27.532 EST 002c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:27.532 EST 002d INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:35.029 EST 002e INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:35.029 EST 002f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:35.029 EST 0030 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:35.029 EST 0031 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:35.029 EST 0032 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:42.528 EST 0033 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:42.528 EST 0034 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:42.528 EST 0035 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:42.528 EST 0036 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:42.528 EST 0037 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:50.028 EST 0038 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:50.028 EST 0039 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:50.028 EST 003a INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:50.028 EST 003b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:50.028 EST 003c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:57.527 EST 003d INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:57.528 EST 003e INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:57.528 EST 003f INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:57.528 EST 0040 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:31:57.528 EST 0041 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:05.029 EST 0042 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:05.030 EST 0043 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:05.030 EST 0044 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:05.030 EST 0045 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:05.030 EST 0046 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:12.528 EST 0047 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:12.528 EST 0048 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:12.528 EST 0049 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:12.528 EST 004a INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:12.528 EST 004b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:18.021 EST 004c INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 3, index: 5, vote: 2] cast MsgPreVote for 2 [logterm: 3, index: 5] at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:20.028 EST 004d INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:20.028 EST 004e INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:20.028 EST 004f INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:20.028 EST 0050 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 2 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:20.028 EST 0051 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 3, index: 5] sent MsgPreVote request to 3 at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.020 EST 0052 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 3, index: 5, vote: 2] cast MsgPreVote for 2 [logterm: 3, index: 5] at term 3 channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.021 EST 0053 INFO[0m [orderer.consensus.etcdraft] [34;1msend[0m -> Successfully sent StepRequest to 2 after failed attempt(s) channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.024 EST 0054 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [term: 3] received a MsgVote message with higher term from 2 [term: 4] channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.024 EST 0055 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 4 channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.024 EST 0056 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 3, index: 5, vote: 0] cast MsgVote for 2 [logterm: 3, index: 5] at term 4 channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.028 EST 0057 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 1 elected leader 2 at term 4 channel=fabric-channel node=1
-[34m2022-12-05 03:32:23.029 EST 0058 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 2 channel=fabric-channel node=1
-[34m2022-12-05 03:33:11.976 EST 0059 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 4, index: 6, vote: 2] rejected MsgPreVote from 3 [logterm: 3, index: 5] at term 4 channel=fabric-channel node=1
-[34m2022-12-05 03:33:20.475 EST 005a INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 4, index: 6, vote: 2] rejected MsgPreVote from 3 [logterm: 3, index: 5] at term 4 channel=fabric-channel node=1
-[34m2022-12-05 03:33:20.476 EST 005b INFO[0m [orderer.consensus.etcdraft] [34;1msend[0m -> Successfully sent StepRequest to 3 after failed attempt(s) channel=fabric-channel node=1
-[34m2022-12-05 04:17:56.390 EST 005c INFO[0m [orderer.consensus.etcdraft] [34;1mforwardToLeader[0m -> Forwarding transaction to the leader 2 channel=fabric-channel node=1
-[34m2022-12-05 04:17:56.391 EST 005d INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=192.168.5.128:41482 grpc.code=OK grpc.call_duration=8.907607ms
-[34m2022-12-05 04:17:56.392 EST 005e INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41476 grpc.code=OK grpc.call_duration=10.621809ms
-[34m2022-12-05 04:17:56.398 EST 005f INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [1] (Raft index: 7) to ledger channel=fabric-channel node=1
-[34m2022-12-05 04:17:56.402 EST 0060 INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
-[34m2022-12-05 04:17:56.414 EST 0061 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
-[34m2022-12-05 04:17:56.414 EST 0062 INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
-[34m2022-12-05 04:17:56.414 EST 0063 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer0/production/etcdraft/wal/businesschannel' channel=businesschannel node=1
-[34m2022-12-05 04:17:56.428 EST 0064 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=businesschannel node=1
-[34m2022-12-05 04:17:56.429 EST 0065 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: businesschannel, nodes: [ID: 2,
+[34m2022-12-05 05:52:20.913 EST 0027 INFO[0m [orderer.common.server] [34;1mMain[0m -> Beginning to serve requests
+[34m2022-12-05 05:52:21.913 EST 0028 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:21.913 EST 0029 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:21.913 EST 002a INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:21.913 EST 002b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:21.913 EST 002c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[31m2022-12-05 05:52:21.913 EST 002d ERRO[0m [orderer.consensus.etcdraft] [31;1mlogSendFailure[0m -> Failed to send StepRequest to 2, because: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.5.128:8050: connect: connection refused" channel=fabric-channel node=1
+[31m2022-12-05 05:52:21.913 EST 002e ERRO[0m [orderer.consensus.etcdraft] [31;1mlogSendFailure[0m -> Failed to send StepRequest to 3, because: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 192.168.5.128:9050: connect: connection refused" channel=fabric-channel node=1
+[34m2022-12-05 05:52:22.912 EST 002f INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:22.912 EST 0030 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:22.912 EST 0031 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:22.912 EST 0032 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:22.912 EST 0033 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:23.912 EST 0034 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:23.913 EST 0035 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:23.913 EST 0036 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:23.913 EST 0037 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:23.913 EST 0038 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:24.912 EST 0039 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:24.912 EST 003a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:24.912 EST 003b INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:24.912 EST 003c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:24.912 EST 003d INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:25.912 EST 003e INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:25.912 EST 003f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:25.912 EST 0040 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:25.912 EST 0041 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:25.912 EST 0042 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:26.913 EST 0043 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:26.913 EST 0044 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:26.913 EST 0045 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:26.913 EST 0046 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:26.913 EST 0047 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:27.912 EST 0048 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:27.912 EST 0049 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:27.912 EST 004a INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:27.912 EST 004b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:27.912 EST 004c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:28.913 EST 004d INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:28.913 EST 004e INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:28.913 EST 004f INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:28.913 EST 0050 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:28.913 EST 0051 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.412 EST 0052 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.412 EST 0053 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.412 EST 0054 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.412 EST 0055 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.412 EST 0056 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.913 EST 0057 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.913 EST 0058 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.913 EST 0059 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.913 EST 005a INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:29.913 EST 005b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:30.911 EST 005c INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:30.912 EST 005d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:30.912 EST 005e INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:30.912 EST 005f INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:30.912 EST 0060 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:31.917 EST 0061 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:31.917 EST 0062 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:31.917 EST 0063 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:31.917 EST 0064 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:31.917 EST 0065 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:32.911 EST 0066 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:32.912 EST 0067 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:32.912 EST 0068 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:32.912 EST 0069 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:32.912 EST 006a INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:33.913 EST 006b INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:33.913 EST 006c INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:33.913 EST 006d INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:33.913 EST 006e INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:33.913 EST 006f INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:34.911 EST 0070 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:34.911 EST 0071 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:34.911 EST 0072 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:34.911 EST 0073 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:34.912 EST 0074 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:35.913 EST 0075 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:35.913 EST 0076 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:35.913 EST 0077 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:35.913 EST 0078 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:35.913 EST 0079 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:36.912 EST 007a INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:36.912 EST 007b INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:36.912 EST 007c INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:36.912 EST 007d INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:36.912 EST 007e INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 007f INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0080 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0081 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0082 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0083 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0084 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0085 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0086 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0087 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:37.914 EST 0088 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:38.912 EST 0089 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:38.913 EST 008a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:38.913 EST 008b INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:38.913 EST 008c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:38.913 EST 008d INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:39.913 EST 008e INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:39.913 EST 008f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:39.913 EST 0090 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:39.913 EST 0091 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:39.913 EST 0092 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:40.912 EST 0093 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:40.912 EST 0094 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:40.912 EST 0095 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:40.912 EST 0096 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:40.912 EST 0097 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:41.913 EST 0098 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:41.913 EST 0099 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:41.913 EST 009a INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:41.914 EST 009b INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:41.914 EST 009c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:42.913 EST 009d INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:42.913 EST 009e INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:42.913 EST 009f INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:42.913 EST 00a0 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:42.913 EST 00a1 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:43.914 EST 00a2 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:43.914 EST 00a3 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:43.914 EST 00a4 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:43.914 EST 00a5 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:43.914 EST 00a6 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:44.911 EST 00a7 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:44.911 EST 00a8 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:44.912 EST 00a9 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:44.912 EST 00aa INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:44.912 EST 00ab INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:45.913 EST 00ac INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:45.913 EST 00ad INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:45.913 EST 00ae INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:45.913 EST 00af INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:45.913 EST 00b0 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.412 EST 00b1 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.412 EST 00b2 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.412 EST 00b3 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.412 EST 00b4 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.412 EST 00b5 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.912 EST 00b6 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.912 EST 00b7 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.913 EST 00b8 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.913 EST 00b9 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:46.913 EST 00ba INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:47.911 EST 00bb INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:47.911 EST 00bc INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:47.911 EST 00bd INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:47.911 EST 00be INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:47.911 EST 00bf INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:48.911 EST 00c0 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:48.912 EST 00c1 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:48.912 EST 00c2 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:48.912 EST 00c3 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:48.912 EST 00c4 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:49.912 EST 00c5 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:49.912 EST 00c6 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:49.912 EST 00c7 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:49.912 EST 00c8 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:49.912 EST 00c9 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:50.912 EST 00ca INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:50.913 EST 00cb INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:50.913 EST 00cc INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:50.913 EST 00cd INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:50.913 EST 00ce INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:51.913 EST 00cf INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:51.913 EST 00d0 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:51.913 EST 00d1 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:51.913 EST 00d2 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:51.913 EST 00d3 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:52.911 EST 00d4 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:52.911 EST 00d5 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:52.911 EST 00d6 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:52.912 EST 00d7 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:52.912 EST 00d8 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:53.914 EST 00d9 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:53.914 EST 00da INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:53.914 EST 00db INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:53.914 EST 00dc INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:53.914 EST 00dd INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00de INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00df INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e0 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e1 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e2 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e3 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e4 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e5 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e6 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:54.912 EST 00e7 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:55.912 EST 00e8 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:55.912 EST 00e9 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:55.912 EST 00ea INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:55.912 EST 00eb INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:55.913 EST 00ec INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.581 EST 00ed INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 1, index: 3, vote: 0] cast MsgPreVote for 2 [logterm: 1, index: 3] at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.911 EST 00ee INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.911 EST 00ef INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.911 EST 00f0 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.912 EST 00f1 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:56.912 EST 00f2 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:57.914 EST 00f3 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:57.914 EST 00f4 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:57.914 EST 00f5 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:57.914 EST 00f6 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:57.914 EST 00f7 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:58.911 EST 00f8 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:58.911 EST 00f9 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:58.912 EST 00fa INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:58.912 EST 00fb INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:58.912 EST 00fc INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:59.912 EST 00fd INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:59.912 EST 00fe INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:59.912 EST 00ff INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:59.912 EST 0100 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:52:59.912 EST 0101 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.912 EST 0102 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.912 EST 0103 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.912 EST 0104 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.912 EST 0105 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.912 EST 0106 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.913 EST 0107 INFO[0m [orderer.consensus.etcdraft] [34;1msend[0m -> Successfully sent StepRequest to 2 after failed attempt(s) channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 0108 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 2 at term 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 0109 INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgPreVoteResp votes and 0 vote rejections channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 010a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeCandidate[0m -> 1 became candidate at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 010b INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 1 at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 010c INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 2 at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.914 EST 010d INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 3 at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.915 EST 010e INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 2 at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.916 EST 010f INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgVoteResp votes and 0 vote rejections channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.916 EST 0110 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeLeader[0m -> 1 became leader at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.916 EST 0111 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 1 elected leader 1 at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.916 EST 0112 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Leader 1 is present, quit campaign channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.916 EST 0113 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=fabric-channel node=1
+[34m2022-12-05 05:53:00.917 EST 0114 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Start accepting requests as Raft leader at block [0] channel=fabric-channel node=1
+[34m2022-12-05 05:53:18.396 EST 0115 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 2, index: 4, vote: 1] rejected MsgPreVote from 3 [logterm: 1, index: 3] at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:25.894 EST 0116 INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 [logterm: 2, index: 4, vote: 1] rejected MsgPreVote from 3 [logterm: 1, index: 3] at term 2 channel=fabric-channel node=1
+[34m2022-12-05 05:53:30.911 EST 0117 INFO[0m [orderer.consensus.etcdraft] [34;1msend[0m -> Successfully sent StepRequest to 3 after failed attempt(s) channel=fabric-channel node=1
+[34m2022-12-05 06:02:14.463 EST 0118 INFO[0m [orderer.consensus.etcdraft] [34;1mpropose[0m -> Created block [1], there are 0 blocks in flight channel=fabric-channel node=1
+[34m2022-12-05 06:02:14.463 EST 0119 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Received config transaction, pause accepting transaction till it is committed channel=fabric-channel node=1
+[34m2022-12-05 06:02:14.465 EST 011a INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=192.168.5.128:37448 grpc.code=OK grpc.call_duration=15.754243ms
+[34m2022-12-05 06:02:14.465 EST 011b INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37434 grpc.code=OK grpc.call_duration=17.572014ms
+[34m2022-12-05 06:02:14.474 EST 011c INFO[0m [orderer.consensus.etcdraft] [34;1mwriteBlock[0m -> Writing block [1] (Raft index: 5) to ledger channel=fabric-channel node=1
+[34m2022-12-05 06:02:14.476 EST 011d INFO[0m [blkstorage] [34;1mnewBlockfileMgr[0m -> Getting block information from block storage
+[34m2022-12-05 06:02:14.480 EST 011e INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> EvictionSuspicion not set, defaulting to 10m0s
+[34m2022-12-05 06:02:14.480 EST 011f INFO[0m [orderer.consensus.etcdraft] [34;1mHandleChain[0m -> With system channel: after eviction InactiveChainRegistry.TrackChain will be called
+[34m2022-12-05 06:02:14.480 EST 0120 INFO[0m [orderer.consensus.etcdraft] [34;1mcreateOrReadWAL[0m -> No WAL data found, creating new WAL at path '/home/kali/hyperledger/fabric-network-learn/orderer0/production/etcdraft/wal/businesschannel' channel=businesschannel node=1
+[34m2022-12-05 06:02:14.483 EST 0121 INFO[0m [orderer.consensus.etcdraft] [34;1mStart[0m -> Starting Raft node channel=businesschannel node=1
+[34m2022-12-05 06:02:14.483 EST 0122 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Entering, channel: businesschannel, nodes: [ID: 2,
 Endpoint: orderer1.example.com:8050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgOgAwIBAgIRAIRR90tZeFaj7LuUMdRCr78wCgYIKoZIzj0EAwIwbDEL
+MIICXTCCAgOgAwIBAgIRAPou2nc3TNbM76/HTbyZrXMwCgYIKoZIzj0EAwIwbDEL
 MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
 cmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l
-eGFtcGxlLmNvbTAeFw0yMjExMjkwODU4MDBaFw0zMjExMjYwODU4MDBaMFkxCzAJ
+eGFtcGxlLmNvbTAeFw0yMjEyMDUxMDQ2MDBaFw0zMjEyMDIxMDQ2MDBaMFkxCzAJ
 BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
 bmNpc2NvMR0wGwYDVQQDExRvcmRlcmVyMS5leGFtcGxlLmNvbTBZMBMGByqGSM49
-AgEGCCqGSM49AwEHA0IABO41E1GAaQh5YMC+cbBJj6m6HBRphnyeaAwSEE2SxbiD
-EF7G6D/bcPq8CByog311S/mVcgr8kC7ED5tnfEAQyf+jgZgwgZUwDgYDVR0PAQH/
+AgEGCCqGSM49AwEHA0IABABIbIPb4z1PltF9rrbXDY+OUQ/B6zlWTI7AGd7xVw1e
+aFtvhoH+GF6mfOsWZ4zoHfXNIPg3tpJczSD/dBDEB6ejgZgwgZUwDgYDVR0PAQH/
 BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8E
-AjAAMCsGA1UdIwQkMCKAIGR+NfXAAPpa7c8nmxdHdWuAbKc/S/TSCrtgmgusJD/3
+AjAAMCsGA1UdIwQkMCKAIF4CNmIIOmrf4qP2Q/ZmAjZXxq2OApG6lqFWDuybch/u
 MCkGA1UdEQQiMCCCFG9yZGVyZXIxLmV4YW1wbGUuY29tgghvcmRlcmVyMTAKBggq
-hkjOPQQDAgNHADBEAiBb4aogUmfFbf1NW8ZLmM6XYyu3g/lQqVNGjKMcez6oeQIg
-EI9KPys5JJEF4I3u4XZ/ITEsJSaDfP7qZCj2n5qQZhM=
+hkjOPQQDAgNIADBFAiEAzHL2GfvcCj1ev06Ha5mbIJN0mcmt/snmPxEq45ZEfdsC
+IHk2AsDcTR+USQGVgppYEEDXxxAihK7f4b5E/1PCBwQ8
 -----END CERTIFICATE-----
  ID: 3,
 Endpoint: orderer2.example.com:9050,
 ServerTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQKFcR6aql1aIu0mZXsZV4hDAKBggqhkjOPQQDAjBsMQsw
+MIICZDCCAgugAwIBAgIQbyHb+DiQl3Zk97H0SLnRdDAKBggqhkjOPQQDAjBsMQsw
 CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
 YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
+YW1wbGUuY29tMB4XDTIyMTIwNTEwNDYwMFoXDTMyMTIwMjEwNDYwMFowWTELMAkG
 A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
 Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEV6XMb/ThypfrFgiVVr/EjB8CeX81z1W0QaJh8CWEPH7S
-v2OOuujGc0jFMVE2GP/NYicX/b7WqbklLU0HZPPqQqOBmDCBlTAOBgNVHQ8BAf8E
+AQYIKoZIzj0DAQcDQgAEqOzin4w4xr4mXk7WLeGVM+2S37xQtVQDLta+CgpvEIpL
+PVGaCIUyMaCldOvdRTvHGS2rqBCDWG2IdpN+yTmWd6OBoTCBnjAOBgNVHQ8BAf8E
 BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyMAoGCCqG
-SM49BAMCA0gAMEUCIQCkvkAqUwfFpLKhmxD3owJsC1Heqz57TsvKKg0EF8jUGwIg
-WmiXUcrhZS4W6S69ac141DgFrDoZCoyCmrItCqYhHek=
+MAAwKwYDVR0jBCQwIoAgXgI2Ygg6at/io/ZD9mYCNlfGrY4CkbqWoVYO7JtyH+4w
+MgYDVR0RBCswKYIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyggEqhwTA
+qAWAMAoGCCqGSM49BAMCA0cAMEQCIGsaPLnN/zCh5Ktzi7ujrzG9h6tBP0fFMZsp
+J9ZDf+HZAiAgl47k7fR9ErmWpD51yB8kJlXW75b9iZsj06nBXz1xbw==
 -----END CERTIFICATE-----
 , ClientTLSCert:-----BEGIN CERTIFICATE-----
-MIICXDCCAgKgAwIBAgIQKFcR6aql1aIu0mZXsZV4hDAKBggqhkjOPQQDAjBsMQsw
+MIICZDCCAgugAwIBAgIQbyHb+DiQl3Zk97H0SLnRdDAKBggqhkjOPQQDAjBsMQsw
 CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
 YW5jaXNjbzEUMBIGA1UEChMLZXhhbXBsZS5jb20xGjAYBgNVBAMTEXRsc2NhLmV4
-YW1wbGUuY29tMB4XDTIyMTEyOTA4NTgwMFoXDTMyMTEyNjA4NTgwMFowWTELMAkG
+YW1wbGUuY29tMB4XDTIyMTIwNTEwNDYwMFoXDTMyMTIwMjEwNDYwMFowWTELMAkG
 A1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFu
 Y2lzY28xHTAbBgNVBAMTFG9yZGVyZXIyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0C
-AQYIKoZIzj0DAQcDQgAEV6XMb/ThypfrFgiVVr/EjB8CeX81z1W0QaJh8CWEPH7S
-v2OOuujGc0jFMVE2GP/NYicX/b7WqbklLU0HZPPqQqOBmDCBlTAOBgNVHQ8BAf8E
+AQYIKoZIzj0DAQcDQgAEqOzin4w4xr4mXk7WLeGVM+2S37xQtVQDLta+CgpvEIpL
+PVGaCIUyMaCldOvdRTvHGS2rqBCDWG2IdpN+yTmWd6OBoTCBnjAOBgNVHQ8BAf8E
 BAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQC
-MAAwKwYDVR0jBCQwIoAgZH419cAA+lrtzyebF0d1a4Bspz9L9NIKu2CaC6wkP/cw
-KQYDVR0RBCIwIIIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyMAoGCCqG
-SM49BAMCA0gAMEUCIQCkvkAqUwfFpLKhmxD3owJsC1Heqz57TsvKKg0EF8jUGwIg
-WmiXUcrhZS4W6S69ac141DgFrDoZCoyCmrItCqYhHek=
+MAAwKwYDVR0jBCQwIoAgXgI2Ygg6at/io/ZD9mYCNlfGrY4CkbqWoVYO7JtyH+4w
+MgYDVR0RBCswKYIUb3JkZXJlcjIuZXhhbXBsZS5jb22CCG9yZGVyZXIyggEqhwTA
+qAWAMAoGCCqGSM49BAMCA0cAMEQCIGsaPLnN/zCh5Ktzi7ujrzG9h6tBP0fFMZsp
+J9ZDf+HZAiAgl47k7fR9ErmWpD51yB8kJlXW75b9iZsj06nBXz1xbw==
 -----END CERTIFICATE-----
 ]
-[34m2022-12-05 04:17:56.429 EST 0066 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel businesschannel
-[34m2022-12-05 04:17:56.429 EST 0067 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel businesschannel with endpoint of orderer1.example.com:8050 due to TLS certificate change
-[34m2022-12-05 04:17:56.429 EST 0068 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 3 with endpoint of orderer2.example.com:9050 for channel businesschannel
-[34m2022-12-05 04:17:56.429 EST 0069 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 3 in channel businesschannel with endpoint of orderer2.example.com:9050 due to TLS certificate change
-[34m2022-12-05 04:17:56.429 EST 006a INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel businesschannel , skipping its deactivation
-[34m2022-12-05 04:17:56.429 EST 006b INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 3 exists in both old and new membership for channel businesschannel , skipping its deactivation
-[34m2022-12-05 04:17:56.429 EST 006c INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
-[34m2022-12-05 04:17:56.429 EST 006d INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=businesschannel node=1
-[34m2022-12-05 04:17:56.429 EST 006e INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 0 channel=businesschannel node=1
-[34m2022-12-05 04:17:56.429 EST 006f INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=businesschannel node=1
-[34m2022-12-05 04:17:56.429 EST 0070 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:56.429 EST 0071 INFO[0m [orderer.commmon.multichannel] [34;1mnewChain[0m -> Created and started new channel businesschannel
-[34m2022-12-05 04:17:56.430 EST 0072 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> This node is picked to start campaign channel=businesschannel node=1
-[34m2022-12-05 04:17:56.436 EST 0073 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=businesschannel node=1
-[34m2022-12-05 04:17:56.436 EST 0074 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=businesschannel node=1
-[34m2022-12-05 04:17:56.436 EST 0075 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=businesschannel node=1
-[33m2022-12-05 04:17:56.613 EST 0076 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:41494 because of consenter error
-[34m2022-12-05 04:17:56.614 EST 0077 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41494 grpc.code=OK grpc.call_duration=201.324665ms
-[33m2022-12-05 04:17:56.819 EST 0078 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:41500 because of consenter error
-[34m2022-12-05 04:17:56.819 EST 0079 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41500 grpc.code=OK grpc.call_duration=201.482965ms
-[33m2022-12-05 04:17:57.023 EST 007a WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:41502 because of consenter error
-[34m2022-12-05 04:17:57.023 EST 007b INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41502 grpc.code=OK grpc.call_duration=201.413265ms
-[33m2022-12-05 04:17:57.229 EST 007c WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:41512 because of consenter error
-[34m2022-12-05 04:17:57.229 EST 007d INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41512 grpc.code=OK grpc.call_duration=202.184863ms
-[34m2022-12-05 04:17:57.432 EST 007e INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.432 EST 007f INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.432 EST 0080 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.432 EST 0081 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.432 EST 0082 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0083 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 3 at term 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0084 INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgPreVoteResp votes and 0 vote rejections channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0085 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeCandidate[0m -> 1 became candidate at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0086 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 1 at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0087 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 2 at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.434 EST 0088 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 3 at term 2 channel=businesschannel node=1
-[33m2022-12-05 04:17:57.436 EST 0089 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:41514 because of consenter error
-[34m2022-12-05 04:17:57.436 EST 008a INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41514 grpc.code=OK grpc.call_duration=200.902862ms
-[34m2022-12-05 04:17:57.439 EST 008b INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 2 at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.439 EST 008c INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgVoteResp votes and 0 vote rejections channel=businesschannel node=1
-[34m2022-12-05 04:17:57.439 EST 008d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeLeader[0m -> 1 became leader at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.439 EST 008e INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 1 elected leader 1 at term 2 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.440 EST 008f INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Leader 1 is present, quit campaign channel=businesschannel node=1
-[34m2022-12-05 04:17:57.440 EST 0090 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=businesschannel node=1
-[34m2022-12-05 04:17:57.442 EST 0091 INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Start accepting requests as Raft leader at block [0] channel=businesschannel node=1
-[34m2022-12-05 04:17:57.649 EST 0092 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:41520 grpc.code=OK grpc.call_duration=206.608067ms
+[34m2022-12-05 06:02:14.483 EST 0123 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 2 with endpoint of orderer1.example.com:8050 for channel businesschannel
+[34m2022-12-05 06:02:14.483 EST 0124 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 2 in channel businesschannel with endpoint of orderer1.example.com:8050 due to TLS certificate change
+[34m2022-12-05 06:02:14.483 EST 0125 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Allocating a new stub for node 3 with endpoint of orderer2.example.com:9050 for channel businesschannel
+[34m2022-12-05 06:02:14.483 EST 0126 INFO[0m [orderer.common.cluster] [34;1mupdateStubInMapping[0m -> Deactivating node 3 in channel businesschannel with endpoint of orderer2.example.com:9050 due to TLS certificate change
+[34m2022-12-05 06:02:14.483 EST 0127 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 2 exists in both old and new membership for channel businesschannel , skipping its deactivation
+[34m2022-12-05 06:02:14.484 EST 0128 INFO[0m [orderer.common.cluster] [34;1mfunc1[0m -> 3 exists in both old and new membership for channel businesschannel , skipping its deactivation
+[34m2022-12-05 06:02:14.484 EST 0129 INFO[0m [orderer.common.cluster] [34;1mConfigure[0m -> Exiting
+[34m2022-12-05 06:02:14.484 EST 012a INFO[0m [orderer.consensus.etcdraft] [34;1mstart[0m -> Starting raft node as part of a new channel channel=businesschannel node=1
+[34m2022-12-05 06:02:14.484 EST 012b INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 0 channel=businesschannel node=1
+[34m2022-12-05 06:02:14.484 EST 012c INFO[0m [orderer.consensus.etcdraft] [34;1mnewRaft[0m -> newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0] channel=businesschannel node=1
+[34m2022-12-05 06:02:14.484 EST 012d INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeFollower[0m -> 1 became follower at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:14.484 EST 012e INFO[0m [orderer.commmon.multichannel] [34;1mnewChain[0m -> Created and started new channel businesschannel
+[34m2022-12-05 06:02:14.484 EST 012f INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> This node is picked to start campaign channel=businesschannel node=1
+[34m2022-12-05 06:02:14.490 EST 0130 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 1, current nodes in channel: [1 2 3] channel=businesschannel node=1
+[34m2022-12-05 06:02:14.490 EST 0131 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 2, current nodes in channel: [1 2 3] channel=businesschannel node=1
+[34m2022-12-05 06:02:14.490 EST 0132 INFO[0m [orderer.consensus.etcdraft] [34;1mapply[0m -> Applied config change to add node 3, current nodes in channel: [1 2 3] channel=businesschannel node=1
+[33m2022-12-05 06:02:14.670 EST 0133 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:37450 because of consenter error
+[34m2022-12-05 06:02:14.670 EST 0134 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37450 grpc.code=OK grpc.call_duration=200.67548ms
+[33m2022-12-05 06:02:14.872 EST 0135 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:37452 because of consenter error
+[34m2022-12-05 06:02:14.873 EST 0136 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37452 grpc.code=OK grpc.call_duration=201.236745ms
+[33m2022-12-05 06:02:15.077 EST 0137 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:37454 because of consenter error
+[34m2022-12-05 06:02:15.077 EST 0138 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37454 grpc.code=OK grpc.call_duration=201.804045ms
+[33m2022-12-05 06:02:15.281 EST 0139 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:37470 because of consenter error
+[34m2022-12-05 06:02:15.282 EST 013a INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37470 grpc.code=OK grpc.call_duration=201.743822ms
+[34m2022-12-05 06:02:15.486 EST 013b INFO[0m [orderer.consensus.etcdraft] [34;1mStep[0m -> 1 is starting a new election at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.486 EST 013c INFO[0m [orderer.consensus.etcdraft] [34;1mbecomePreCandidate[0m -> 1 became pre-candidate at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.486 EST 013d INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 1 at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.486 EST 013e INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 2 at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.486 EST 013f INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgPreVote request to 3 at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0140 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgPreVoteResp from 3 at term 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0141 INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgPreVoteResp votes and 0 vote rejections channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0142 INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeCandidate[0m -> 1 became candidate at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0143 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 1 at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0144 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 3 at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.488 EST 0145 INFO[0m [orderer.consensus.etcdraft] [34;1mcampaign[0m -> 1 [logterm: 1, index: 3] sent MsgVote request to 2 at term 2 channel=businesschannel node=1
+[33m2022-12-05 06:02:15.489 EST 0146 WARN[0m [common.deliver] [33;1mdeliverBlocks[0m -> [channel: businesschannel] Rejecting deliver request for 192.168.5.128:37480 because of consenter error
+[34m2022-12-05 06:02:15.490 EST 0148 INFO[0m [orderer.consensus.etcdraft] [34;1mpoll[0m -> 1 received MsgVoteResp from 3 at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.490 EST 0149 INFO[0m [orderer.consensus.etcdraft] [34;1mstepCandidate[0m -> 1 [quorum:2] has received 2 MsgVoteResp votes and 0 vote rejections channel=businesschannel node=1
+[34m2022-12-05 06:02:15.490 EST 0147 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37480 grpc.code=OK grpc.call_duration=204.696854ms
+[34m2022-12-05 06:02:15.490 EST 014a INFO[0m [orderer.consensus.etcdraft] [34;1mbecomeLeader[0m -> 1 became leader at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.490 EST 014b INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> raft.node: 1 elected leader 1 at term 2 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.490 EST 014c INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Leader 1 is present, quit campaign channel=businesschannel node=1
+[34m2022-12-05 06:02:15.491 EST 014d INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Raft leader changed: 0 -> 1 channel=businesschannel node=1
+[34m2022-12-05 06:02:15.493 EST 014e INFO[0m [orderer.consensus.etcdraft] [34;1mrun[0m -> Start accepting requests as Raft leader at block [0] channel=businesschannel node=1
+[34m2022-12-05 06:02:15.697 EST 014f INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Deliver grpc.peer_address=192.168.5.128:37486 grpc.code=OK grpc.call_duration=202.700652ms
+[33m2022-12-05 06:36:16.620 EST 0150 WARN[0m [orderer.common.msgprocessor] [33;1mApply[0m -> SigFilter evaluation failed error="implicit policy evaluation failed - 0 sub-policies were satisfied, but this policy requires 1 of the 'Writers' sub-policies to be satisfied" ConsensusState=STATE_NORMAL policyName=/Channel/Writers signingIdentity="(mspid=Org1MSP subject=CN=peer0.org1.example.com,OU=peer,L=San Francisco,ST=California,C=US issuer=CN=ca.org1.example.com,O=org1.example.com,L=San Francisco,ST=California,C=US serialnumber=174283081962367116364939898182069880682)"
+[33m2022-12-05 06:36:16.620 EST 0151 WARN[0m [orderer.common.broadcast] [33;1mProcessMessage[0m -> [channel: businesschannel] Rejecting broadcast of config message from 192.168.5.128:55578 because of error: config update for existing channel did not pass initial checks: implicit policy evaluation failed - 0 sub-policies were satisfied, but this policy requires 1 of the 'Writers' sub-policies to be satisfied: permission denied
+[34m2022-12-05 06:36:16.620 EST 0152 INFO[0m [comm.grpc.server] [34;1m1[0m -> streaming call completed grpc.service=orderer.AtomicBroadcast grpc.method=Broadcast grpc.peer_address=192.168.5.128:55578 grpc.code=OK grpc.call_duration=731.256µs

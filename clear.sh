@@ -1,0 +1,9 @@
+rm channel-artifacts/* -r
+rm crypto-config/* -r
+rm orderer0/production/* -r
+rm orderer1/production/* -r
+rm orderer2/production/* -r
+rm org1-peer/peer0/production/* -r
+rm org1-peer/peer1/production/* -r
+rm org2-peer/peer0/production/* -r
+rm org2-peer/peer1/production/* -r
