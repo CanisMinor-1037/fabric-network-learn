@@ -1,0 +1,16 @@
+=============== Dec 5, 2022 (EST) ===============
+02:58:46.239023 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+02:58:46.242354 db@open opening
+02:58:46.242920 version@stat F·[] S·0B[] Sc·[]
+02:58:46.244054 db@janitor F·2 G·0
+02:58:46.244083 db@open done T·1.699101ms
+=============== Dec 5, 2022 (EST) ===============
+03:33:03.446567 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+03:33:03.446702 version@stat F·[] S·0B[] Sc·[]
+03:33:03.446769 db@open opening
+03:33:03.446880 journal@recovery F·1
+03:33:03.447521 journal@recovery recovering @1
+03:33:03.449648 memdb@flush created L0@2 N·4 S·194B "fab..nfo,v2":"fab..\x00n\x00,v3"
+03:33:03.451505 version@stat F·[1] S·194B[194B] Sc·[0.25]
+03:33:03.457246 db@janitor F·3 G·0
+03:33:03.457294 db@open done T·10.506836ms

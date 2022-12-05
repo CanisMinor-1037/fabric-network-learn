@@ -1,0 +1,42 @@
+nohup: ignoring input
+[34m2022-12-05 04:01:13.356 EST 0001 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer:
+ Version: 2.4.7
+ Commit SHA: df9c661
+ Go version: go1.18.7
+ OS/Arch: linux/amd64
+ Chaincode:
+  Base Docker Label: org.hyperledger.fabric
+  Docker Namespace: hyperledger
+[34m2022-12-05 04:01:13.356 EST 0002 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Auto-detected peer address: 192.168.5.128:9051
+[34m2022-12-05 04:01:13.356 EST 0003 INFO[0m [peer] [34;1mgetLocalAddress[0m -> Returning 192.168.5.128:9051
+[34m2022-12-05 04:01:13.357 EST 0004 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for endorser service is 2500
+[34m2022-12-05 04:01:13.357 EST 0005 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for deliver service is 2500
+[34m2022-12-05 04:01:13.357 EST 0006 INFO[0m [nodeCmd] [34;1minitGrpcSemaphores[0m -> concurrency limit for gateway service is 500
+[34m2022-12-05 04:01:13.357 EST 0007 INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with TLS enabled
+[34m2022-12-05 04:01:13.368 EST 0008 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The enrollment certificate will expire on 2032-11-26 08:58:00 +0000 UTC
+[34m2022-12-05 04:01:13.368 EST 0009 INFO[0m [certmonitor] [34;1mtrackCertExpiration[0m -> The server TLS certificate will expire on 2032-11-26 08:58:00 +0000 UTC
+[34m2022-12-05 04:01:13.368 EST 000a INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initializing LedgerMgr
+[34m2022-12-05 04:01:13.383 EST 000b INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 04:01:13.384 EST 000c INFO[0m [blkstorage] [34;1mNewProvider[0m -> Creating new file ledger directory at /home/kali/hyperledger/fabric-network-learn/org2-peer/peer0/production/ledgersData/chains/chains
+[34m2022-12-05 04:01:13.393 EST 000d INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 04:01:13.417 EST 000e INFO[0m [leveldbhelper] [34;1mopenDBAndCheckFormat[0m -> DB is empty Setting db format as 2.0
+[34m2022-12-05 04:01:13.419 EST 000f INFO[0m [ledgermgmt] [34;1mNewLedgerMgr[0m -> Initialized LedgerMgr
+[34m2022-12-05 04:01:13.419 EST 0010 INFO[0m [gossip.service] [34;1mNew[0m -> Initialize gossip with endpoint 192.168.5.128:9051
+[34m2022-12-05 04:01:13.420 EST 0011 INFO[0m [gossip.gossip] [34;1mNew[0m -> Creating gossip service with self membership of Endpoint: , InternalEndpoint: 192.168.5.128:9051, PKI-ID: b25afddc07fcdd67eba9ae02b16c5dcb54059eb8b56fe7fc5474be1c86eb4571, Metadata: 
+[33m2022-12-05 04:01:13.420 EST 0012 WARN[0m [gossip.gossip] [33;1mNew[0m -> External endpoint is empty, peer will not be accessible outside of its organization
+[34m2022-12-05 04:01:13.420 EST 0013 INFO[0m [lifecycle] [34;1mInitializeLocalChaincodes[0m -> Initialized lifecycle cache with 0 already installed chaincodes
+[34m2022-12-05 04:01:13.420 EST 0014 INFO[0m [gossip.gossip] [34;1mstart[0m -> Gossip instance 192.168.5.128:9051 started
+[34m2022-12-05 04:01:13.421 EST 0015 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Entering computeChaincodeEndpoint with peerHostname: 192.168.5.128
+[34m2022-12-05 04:01:13.421 EST 0016 INFO[0m [nodeCmd] [34;1mcomputeChaincodeEndpoint[0m -> Exit with ccEndpoint: 192.168.5.128:7055
+[34m2022-12-05 04:01:13.421 EST 0017 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'lscc'
+[34m2022-12-05 04:01:13.421 EST 0018 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'cscc'
+[34m2022-12-05 04:01:13.422 EST 0019 INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode 'qscc'
+[34m2022-12-05 04:01:13.422 EST 001a INFO[0m [sccapi] [34;1mDeploySysCC[0m -> deploying system chaincode '_lifecycle'
+[34m2022-12-05 04:01:13.422 EST 001b INFO[0m [nodeCmd] [34;1mserve[0m -> Deployed system chaincodes
+[34m2022-12-05 04:01:13.422 EST 001c INFO[0m [discovery] [34;1mNewService[0m -> Created with config TLS: true, authCacheMaxSize: 1000, authCachePurgeRatio: 0.750000
+[34m2022-12-05 04:01:13.422 EST 001d INFO[0m [nodeCmd] [34;1mserve[0m -> Discovery service activated
+[34m2022-12-05 04:01:13.422 EST 001e INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with Gateway enabled
+[34m2022-12-05 04:01:13.422 EST 001f INFO[0m [nodeCmd] [34;1mserve[0m -> Starting peer with ID=[peer0.org2.example.com], network ID=[dev], address=[192.168.5.128:9051]
+[34m2022-12-05 04:01:13.422 EST 0020 INFO[0m [nodeCmd] [34;1mserve[0m -> Started peer with ID=[peer0.org2.example.com], network ID=[dev], address=[192.168.5.128:9051]
+[34m2022-12-05 04:01:13.422 EST 0021 INFO[0m [kvledger] [34;1mLoadPreResetHeight[0m -> Loading prereset height from path [/home/kali/hyperledger/fabric-network-learn/org2-peer/peer0/production/ledgersData/chains]
+[34m2022-12-05 04:01:13.423 EST 0022 INFO[0m [blkstorage] [34;1mpreResetHtFiles[0m -> No active channels passed
